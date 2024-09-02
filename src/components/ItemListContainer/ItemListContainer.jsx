@@ -1,6 +1,8 @@
 import { Box, Text, Flex } from "@chakra-ui/react";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting, products }) => {
+
+    console.log(products);
     return(
         <Box
         width={'100vw'}
@@ -9,14 +11,19 @@ const ItemListContainer = ({ greeting }) => {
         alignItems={'center'} 
         justifyContent={'center'}>
             <Flex>
-                <Text
-                    bgGradient='linear(to-l, #7928CA, #FF0080)'
-                    bgClip='text'
-                    fontSize='6xl'
-                    fontWeight='bold'
-                    >
-                    {greeting}
-                </Text>
+                {
+                    products.map(
+                        (product) => {
+                            return (
+                              <Box>
+                                <h2>{product.name}</h2>
+                                <p>{product.description}</p>
+                                <p>{product.price}</p>
+                              </Box>          
+                            )
+                    }
+                )
+                }
             </Flex>
         </Box>
     )
