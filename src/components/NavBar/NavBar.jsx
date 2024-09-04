@@ -1,6 +1,7 @@
 import {
     Box,
     Flex,
+    Text,
     Avatar,
     Button,
     Menu,
@@ -16,14 +17,27 @@ import {
   } from '@chakra-ui/react';
   import { MoonIcon, SunIcon } from '@chakra-ui/icons';
   import CartWidget from '../CartWidget/CartWidget';
-
+  
 const NavBar = () => {
     const { colorMode, toggleColorMode } = useColorMode()
 
     return (
-        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>La tiendita</Box>
+        <Box bg={useColorModeValue('gray.10', 'gray.900')} px={4}>
+        <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
+          <Flex direction={'row'} align={'center'}>
+            <Image
+              src='/assets/logo.png'
+              alt='Logo Store' 
+              boxSize='60px'
+              bg='radial-gradient(#1bfc9d00, transparent, #1bfe9e38, transparent, transparent, transparent)'
+              borderRadius={'10px'}>
+            </Image>
+            <Box className='glitch' data-text='Store'
+              fontSize='2xl'
+            >
+              Store
+            </Box>
+          </Flex>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -41,7 +55,7 @@ const NavBar = () => {
                   minW={0}>
                   <Avatar
                     size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
+                    src={'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg'}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -49,7 +63,7 @@ const NavBar = () => {
                   <Center>
                     <Avatar
                       size={'2xl'}
-                      src={'https://avatars.dicebear.com/api/male/username.svg'}
+                      src={'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg'}
                     />
                   </Center>
                   <br />

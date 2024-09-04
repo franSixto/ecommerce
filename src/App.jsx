@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import MainLayout from "./layout/MainLayout";
 import { ProductData } from "./data/productData";
+import './App.css'
 
 function App() {
 
