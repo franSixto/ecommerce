@@ -5,6 +5,7 @@ import { Flex, Spinner } from "@chakra-ui/react";
 import "./App.css";
 import { useProducts } from "./hooks";
 import { useProductsById } from "./hooks/useProductsById";
+import { MainRouter } from "./router";
 
 function App() {
   const { productsData, loading } = useProducts();
@@ -13,7 +14,8 @@ function App() {
   return (
     <ChakraProvider>
       <MainLayout>
-        {loading ? (
+        <MainRouter/>
+        {/* {loading ? (
           <Flex
             width={"100%"}
             height={"90vh"}
@@ -26,7 +28,7 @@ function App() {
           <Flex gap={4} flexWrap={"wrap"} justifyContent={"center"} padding={4}>
             <ItemListContainer products={productsData} />
           </Flex>
-        )}
+        )} */}
       </MainLayout>
     </ChakraProvider>
   );
