@@ -13,7 +13,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-const ItemListContainer = ({ products }) => {
+export const ItemListContainer = ({ products }) => {
   return products.map((product) => (
     <Card key={product.id} maxW="sm">
       <CardBody>
@@ -40,5 +40,3 @@ const ItemListContainer = ({ products }) => {
     </Card>
   ));
 };
-
-export default ItemListContainer;

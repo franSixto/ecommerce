@@ -1,4 +1,4 @@
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import { ItemListContainer } from "./components";
 import MainLayout from "./layout/MainLayout";
 import { useEffect, useState } from "react";
 import { ChakraProvider } from "@chakra-ui/react";

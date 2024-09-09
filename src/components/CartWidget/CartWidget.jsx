@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { FaCartShopping } from "react-icons/fa6";
 
-const CartWidget = () =>{
+export const CartWidget = () =>{
     return(
         <Flex alignItems={'center'} justifyContent={'space-between'} >
             <FaCartShopping size={24}/>
@@ -9,5 +9,3 @@ const CartWidget = () =>{
         </Flex>
     )
 }
-
-export default CartWidget;
