@@ -29,16 +29,8 @@ export const ItemListContainer = ({ products }) => {
         <Stack mt="6" spacing="3">
           <Heading size="md">{product.title}</Heading>
           <Text>{product.description}</Text>
-          <Text 
-            color="green.900"
-          >
-            <Box 
-            backgroundColor="green.100"
-            textAlign={"end"}
-            fontSize="2xl"
-            borderRadius={10}
-            padding={2}
-            >{product.price}</Box>
+          <Text color="green.900">
+            {product.price}
           </Text>
         </Stack>
       </CardBody>

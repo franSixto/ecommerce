@@ -4,9 +4,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Flex, Spinner } from "@chakra-ui/react";
 import "./App.css";
 import { useProducts } from "./hooks";
+import { useProductsById } from "./hooks/useProductsById";
 
 function App() {
   const { productsData, loading } = useProducts();
+  const {productData} = useProductsById(1);
 
   return (
     <ChakraProvider>
