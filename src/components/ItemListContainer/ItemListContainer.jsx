@@ -1,59 +1,44 @@
-import { 
-    Box,
-    Image,
-    Text,
-    Heading,
-    Flex,
-    Spacer,
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Button } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Heading,
+  Flex,
+  Stack,
+  Text,
+  Divider,
+  ButtonGroup,
+  CardFooter,
+  Card,
+  CardBody,
+  Button,
+} from "@chakra-ui/react";
 
-const ItemListContainer = ({ greeting, products }) => {
-
-    console.log(products);
-    return(
-
-        <Box
-        width={'100vw'}
-        height={'90vh'} 
-        display={'Flex'}
-        alignItems={'center'} 
-        justifyContent={'center'}>
-            <Flex>
-                {
-                    products.map(
-                        (product) => {
-                            return (
-                                
-
-                              <Box>
-                                <Card>
-                                    <CardBody>
-                                        <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov'></Image>
-                                        <Heading fontSize='xl'>{product.name}</Heading>
-                                        <p>{product.description}</p>
-                                        <Flex alignItems={'center'}>
-                                            <Box>
-                                                <p>{product.price}</p>
-                                            </Box>
-                                            <Spacer />
-                                            <Box>
-                                                <Button colorScheme='blue'>COMPRAR</Button>
-                                            </Box>
-                                        </Flex>
-                                    </CardBody>
-                                </Card>
-                              </Box>          
-                            )
-                    }
-                )
-                }
-            </Flex>
-        </Box>
-    )
-}
+const ItemListContainer = ({ products }) => {
+  return products.map((product) => (
+    <Card key={product.id} maxW="sm">
+      <CardBody>
+        <Image src={product.thumbnail} alt={product.title} borderRadius="lg" minWidth={"100%"} />
+        <Stack mt="6" spacing="3">
+          <Heading size="md">{product.title}</Heading>
+          <Text>{product.description}</Text>
+          <Text color="blue.600" fontSize="2xl">
+            {product.price}
+          </Text>
+        </Stack>
+      </CardBody>
+      <Divider />
+      <CardFooter>
+        <ButtonGroup spacing="2">
+          <Button variant="solid" colorScheme="blue">
+            Buy now
+          </Button>
+          <Button variant="ghost" colorScheme="blue">
+            Add to cart
+          </Button>
+        </ButtonGroup>
+      </CardFooter>
+    </Card>
+  ));
+};
 
 export default ItemListContainer;
