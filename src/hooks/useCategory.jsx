@@ -1,20 +1,18 @@
-import React from 'react';
-import { getCategories } from '../services/products';
+import React from "react";
+import { getCategories } from "../services/products";
 
-const UseCategory = () => {
-    
- const [category, setCategory] = React.useState([]);
+export const UseCategory = () => {
+  const [category, setCategory] = React.useState([]);
 
- React.useEffect(() => {
+  React.useEffect(() => {
     getCategories()
-    .then((res) => {
-        setCategory(res.data);
-    })
-    .catch((err) => {
+      .then((response) => {
+        setCategory(response.data);
+      })
+      .catch((err) => {
         console.log(err);
-    });
- }, []);
+      });
+  }, []);
 
- return { category };
-    
-}
+  return { category };
+};
