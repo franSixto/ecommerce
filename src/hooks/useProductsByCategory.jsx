@@ -1,17 +1,20 @@
-import { getProductByCategory } from "../services/products";
 import React from "react";
+import { getProductsByCategory } from "../services/products";
+
 
 export const useProductsByCategory = (id) => {
   const [products, setProducts] = React.useState([]);
   React.useEffect(() => {
-    getProductByCategory(id)
+    getProductsByCategory(id)
       .then((response) => {
+        console.log(response);
         setProducts(response.data.products);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((error) => {
+        console.log(error);
+      });   
   }, [id]);
 
     return { products };
 };
+

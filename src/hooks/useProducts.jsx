@@ -28,6 +28,5 @@ export const useProducts = () => {
       });
   }, []);
 
-return { productsData, loading };
-
+  return { productsData, loading };
 };
