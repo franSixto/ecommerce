@@ -38,11 +38,11 @@ export const NavBar = () => {
           <Menu display="flex" gap={4}>
               <Link to="/" style={{marginLeft: "20px"}}>Home</Link>
               <MenuButton as={Link} cursor="pointer" style={{marginLeft: "20px"}}>
-                Dinamyc Menu
+                Categorias
               </MenuButton>
               <MenuList height={"150px"} overflowY={"scroll"}>
-                {category.map((option) => (
-                  <MenuItem key={option.slug}>{option.name}</MenuItem>
+                {category.map((category) => (
+                  <MenuItem key={category.slug}><Link to={`/category/${category.slug}`}>{category.name}</Link></MenuItem>
                 ))}
               </MenuList>
           </Menu>

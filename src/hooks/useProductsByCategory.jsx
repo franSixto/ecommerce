@@ -1,7 +1,17 @@
-import React from 'react'
+import { getProductByCategory } from "../services/products";
+import React from "react";
 
-const useProductsByCategory = () => {
+export const useProductsByCategory = (id) => {
+  const [products, setProducts] = React.useState([]);
+  React.useEffect(() => {
+    getProductByCategory(id)
+      .then((response) => {
+        setProducts(response.data.products);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
 
-}
-
-export default useProductsByCategory
+    return { products };
+};
