@@ -21,16 +21,7 @@ import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const menuOptions = [
-    { id: 1, name: "Action" },
-    { id: 2, name: "Adventure" },
-    { id: 3, name: "RPG" },
-    { id: 4, name: "Strategy" },
-    { id: 5, name: "Simulation" },
-    { id: 6, name: "Sports" },
-    { id: 7, name: "Puzzle" },
-    { id: 8, name: "Horror" },
-  ]
+  const { categories } = useCategory();
   return (
     <Box bg={useColorModeValue("gray.10", "gray.900")} px={4}>
       <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
@@ -49,8 +40,8 @@ export const NavBar = () => {
                 Dinamyc Menu
               </MenuButton>
               <MenuList>
-                {menuOptions.map((option) => (
-                  <MenuItem key={option.id}>{option.name}</MenuItem>
+                {category.map((option) => (
+                  <MenuItem key={option.slug}>{option.name}</MenuItem>
                 ))}
               </MenuList>
           </Menu>
