@@ -27,9 +27,9 @@ export const ItemListContainer = ({ products }) => {
           height={"344px"}
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">{product.title}</Heading>
-          <Text>{product.description}</Text>
-          <Text color="green.900">
+          <Heading minHeight={"47px"} size="md">{product.title}</Heading>
+          <Text noOfLines={3}>{product.description}</Text>
+          <Text color="green.900" backgroundColor="green.100" padding={3} borderRadius={5} textAlign={"end"}>
             {product.price}
           </Text>
         </Stack>

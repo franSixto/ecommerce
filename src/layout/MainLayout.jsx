@@ -4,7 +4,6 @@ const MainLayout = ({children}) => {
 
     return (
         <div>
-            <NavBar/>
             {children}        
         </div>
     );
