@@ -12,6 +12,7 @@ import {
   CardBody,
   Button,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export const ItemListContainer = ({ products }) => {
   return products.map((product) => (
@@ -37,9 +38,9 @@ export const ItemListContainer = ({ products }) => {
       <Divider />
       <CardFooter>
         <ButtonGroup spacing="2" width={'100%'} justifyContent="space-between">
-          <Button variant="ghost" colorScheme="green">
-            Add to cart
-          </Button>
+          <Link to={`/item/${product.id}`}>
+            Ver detalle
+          </Link>
           <Button variant="solid" colorScheme="green">
             Buy now
           </Button>
